@@ -19,7 +19,7 @@ func main() {
 
 	deliveryChan := make(chan kafka.Event)
 
-	err = app.Publish("Hello, Kafka c:", nil, "test", producer, deliveryChan)
+	err = app.Publish("Hello, Kafka c:", []byte("baz"), "test2", producer, deliveryChan)
 
 	if err != nil {
 		panic(err)
